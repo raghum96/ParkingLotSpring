@@ -14,26 +14,31 @@ public class Handler {
 		Initializer.init();
 	}
 	
+	ParkingManager parkingManager;
+	
 	public static void main(String[] args) {
+		
+		ParkingManager parkingManager = new ParkingManager();
+		
 		// get a car
 		Vehicle v = new Car();
 		v.setRegisterationNumber("JK08K6360");
 
 		// car ready
 
-		ParkingManager.park(v);
+		parkingManager.park(v);
 
 		System.out.println("Empty SLot list");
 		Initializer.GenericParking.getParkingBoxList().stream().filter(Predicate.not(ParkingBox::getStatus))
 				.forEach(s -> System.out.println(s.getId()));
 		
-		ParkingManager.park(v);
+		parkingManager.park(v);
 
 		System.out.println("Empty SLot list");
 		Initializer.GenericParking.getParkingBoxList().stream().filter(Predicate.not(ParkingBox::getStatus))
 				.forEach(s -> System.out.println(s.getId()));
 		
-		ParkingManager.unPark("p1a2");
+		parkingManager.unPark("p1a2");
 		
 		System.out.println("Empty SLot list");
 		Initializer.GenericParking.getParkingBoxList().stream().filter(Predicate.not(ParkingBox::getStatus))
