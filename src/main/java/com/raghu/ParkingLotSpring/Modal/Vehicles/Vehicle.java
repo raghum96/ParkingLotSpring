@@ -1,10 +1,8 @@
 package com.raghu.ParkingLotSpring.Modal.Vehicles;
 
-public abstract class Vehicle {
+public class Vehicle {
 	String registerationNumber;
 	VehicleType vehicleType;
-
-	protected abstract void setType();
 
 	public String getRegisterationNumber() {
 		return registerationNumber;
