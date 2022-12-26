@@ -18,10 +18,10 @@ public class ParkingController {
 	}
 	
 	
-	@GetMapping(value="/getSlot")
-	public ResponseEntity<ParkingBox> getSLot(){
+	@GetMapping(value="/viewSlot")
+	public ResponseEntity<ParkingBox> viewNearestSlot(){
 		ParkingService parkingService = new ParkingService();
-		return ResponseEntity.ok(parkingService.getNearestSlot());
+		return ResponseEntity.ok(parkingService.showNearestSlot());
 	}
 	
 		

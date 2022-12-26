@@ -11,4 +11,10 @@ public class ParkingService {
 		System.out.println("Got slot as : " + slot.getId());
 		return slot;
 	}
+	
+	public ParkingBox showNearestSlot() {
+		ParkingBox slot; 
+		slot = Initializer.minBoxHeap.peek();	
+		return slot;
+	}
 }
