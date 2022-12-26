@@ -5,11 +5,18 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.PriorityQueue;
 
+import org.springframework.beans.factory.InitializingBean;
+import org.springframework.context.ApplicationListener;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.event.ContextRefreshedEvent;
+import org.springframework.stereotype.Component;
+
 import com.raghu.ParkingLotSpring.Modal.ParkingArea.SingleLevelParkingStructure;
 import com.raghu.ParkingLotSpring.Modal.ParkingArea.IParkingStructure;
 import com.raghu.ParkingLotSpring.Modal.ParkingArea.ParkingBox;
 
-public class Initializer {
+@Component
+public class Initializer implements ApplicationListener<ContextRefreshedEvent> {
 	
 	public static IParkingStructure GenericParking;
 	public static PriorityQueue<ParkingBox> minBoxHeap;
@@ -40,8 +47,15 @@ public class Initializer {
 		});
 		
 		minBoxHeap.addAll(GenericParking.getParkingBoxList());
+		
+		System.out.println("Parking Lot ready!!!");
 
 
+	}
+
+	@Override
+	public void onApplicationEvent(ContextRefreshedEvent event) {
+		init();
 	}
 		
 }
