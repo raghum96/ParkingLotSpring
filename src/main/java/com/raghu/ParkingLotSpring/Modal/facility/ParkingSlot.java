@@ -43,6 +43,11 @@ public class ParkingSlot {
 	public void setOutTime(Date outTime) {
 		this.outTime = outTime;
 	}
+	@Override
+	public String toString() {
+		return "ParkingSlot [parkingId=" + parkingId + ", slot=" + slot.getId() + ", vehicle=" + vehicle + ", inTime=" + inTime
+				+ ", outTime=" + outTime + "]";
+	}
 	
 	
 	
