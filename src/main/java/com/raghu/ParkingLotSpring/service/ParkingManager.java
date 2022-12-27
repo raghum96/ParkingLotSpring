@@ -2,15 +2,20 @@ package com.raghu.ParkingLotSpring.service;
 
 import java.util.Date;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.raghu.ParkingLotSpring.Modal.ParkingArea.ParkingBox;
 import com.raghu.ParkingLotSpring.Modal.Vehicles.Vehicle;
 import com.raghu.ParkingLotSpring.Modal.facility.ParkingSlot;
 import static com.raghu.ParkingLotSpring.SavedData.*;
 
+@Service
 public class ParkingManager {
 	private static int PARKING_ID_COUNTER=1;
 	
-	ParkingService parkingService = new ParkingService();
+	@Autowired
+	ParkingService parkingService;
 
 	public ParkingSlot park(Vehicle vehicle) {
 		
