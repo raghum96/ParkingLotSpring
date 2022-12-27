@@ -2,6 +2,7 @@ package com.raghu.ParkingLotSpring;
 
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
 import java.util.PriorityQueue;
 
@@ -36,6 +37,9 @@ public class Initializer implements ApplicationListener<ContextRefreshedEvent> {
 		EMPTY_BOXES= new PriorityQueue<>();
 		
 		EMPTY_BOXES.addAll(GenericParking.getParkingBoxList());
+
+		//init parking ticket memory
+		PARKING_TICKETS= new HashMap<>();
 		
 		System.out.println("Parking Lot ready!!!");
 
