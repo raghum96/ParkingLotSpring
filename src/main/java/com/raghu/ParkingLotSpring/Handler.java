@@ -8,10 +8,12 @@ import com.raghu.ParkingLotSpring.Modal.ParkingArea.ParkingBox;
 import com.raghu.ParkingLotSpring.Modal.Vehicles.Car;
 import com.raghu.ParkingLotSpring.Modal.Vehicles.Vehicle;
 import com.raghu.ParkingLotSpring.service.ParkingManager;
+import static com.raghu.ParkingLotSpring.SavedData.*;
 
 public class Handler {
 	static {
 		Initializer.init();
+
 	}
 	
 	ParkingManager parkingManager;
@@ -29,19 +31,19 @@ public class Handler {
 		parkingManager.park(v);
 
 		System.out.println("Empty SLot list");
-		Initializer.GenericParking.getParkingBoxList().stream().filter(Predicate.not(ParkingBox::getStatus))
+		GenericParking.getParkingBoxList().stream().filter(Predicate.not(ParkingBox::getStatus))
 				.forEach(s -> System.out.println(s.getId()));
 		
 		parkingManager.park(v);
 
 		System.out.println("Empty SLot list");
-		Initializer.GenericParking.getParkingBoxList().stream().filter(Predicate.not(ParkingBox::getStatus))
+		GenericParking.getParkingBoxList().stream().filter(Predicate.not(ParkingBox::getStatus))
 				.forEach(s -> System.out.println(s.getId()));
 		
 		parkingManager.unPark("p1a2");
 		
 		System.out.println("Empty SLot list");
-		Initializer.GenericParking.getParkingBoxList().stream().filter(Predicate.not(ParkingBox::getStatus))
+		GenericParking.getParkingBoxList().stream().filter(Predicate.not(ParkingBox::getStatus))
 				.forEach(s -> System.out.println(s.getId()));
 		
 

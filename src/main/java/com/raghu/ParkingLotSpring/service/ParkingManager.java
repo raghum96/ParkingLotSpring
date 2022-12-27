@@ -6,7 +6,7 @@ import com.raghu.ParkingLotSpring.Initializer;
 import com.raghu.ParkingLotSpring.Modal.ParkingArea.ParkingBox;
 import com.raghu.ParkingLotSpring.Modal.Vehicles.Vehicle;
 import com.raghu.ParkingLotSpring.Modal.facility.ParkingSlot;
-import com.raghu.ParkingLotSpring.service.ParkingService;
+import static com.raghu.ParkingLotSpring.SavedData.*;
 
 public class ParkingManager {
 	
@@ -35,11 +35,11 @@ public class ParkingManager {
 	
 	public void unPark(String slotId) {
 
-		ParkingBox slot = Initializer.GenericParking.getParkingBoxList().stream().filter(s -> s.getId().equals(slotId))
+		ParkingBox slot = GenericParking.getParkingBoxList().stream().filter(s -> s.getId().equals(slotId))
 				.findFirst().orElse(null);
 
 		slot.setStatus(false);
-		Initializer.minBoxHeap.add(slot);
+		EMPTY_BOXES.add(slot);
 
 	}
 	
