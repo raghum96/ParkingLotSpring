@@ -6,6 +6,7 @@ import java.util.PriorityQueue;
 import com.raghu.ParkingLotSpring.Modal.ParkingArea.IParkingStructure;
 import com.raghu.ParkingLotSpring.Modal.ParkingArea.ParkingBox;
 import com.raghu.ParkingLotSpring.Modal.facility.ParkingDetails;
+import com.raghu.ParkingLotSpring.Modal.facility.ParkingSlot;
 
 public class SavedData {
 	
@@ -24,5 +25,5 @@ public class SavedData {
 	 * This contains details of parking details
 	 */
 	// TO DO modified to have parking tickets
-	public static Map<Integer, ParkingDetails> PARKING_TICKETS;
+	public static Map<Integer, ParkingSlot> PARKING_TICKETS;
 }
