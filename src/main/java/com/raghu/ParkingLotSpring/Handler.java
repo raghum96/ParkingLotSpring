@@ -7,7 +7,7 @@ import java.util.function.Predicate;
 import com.raghu.ParkingLotSpring.Modal.ParkingArea.ParkingBox;
 import com.raghu.ParkingLotSpring.Modal.Vehicles.Car;
 import com.raghu.ParkingLotSpring.Modal.Vehicles.Vehicle;
-import com.raghu.ParkingLotSpring.facility.ParkingManager;
+import com.raghu.ParkingLotSpring.service.ParkingManager;
 
 public class Handler {
 	static {

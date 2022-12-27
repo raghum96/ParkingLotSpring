@@ -1,10 +1,11 @@
-package com.raghu.ParkingLotSpring.facility;
+package com.raghu.ParkingLotSpring.service;
 
 import java.util.Date;
 
 import com.raghu.ParkingLotSpring.Initializer;
 import com.raghu.ParkingLotSpring.Modal.ParkingArea.ParkingBox;
 import com.raghu.ParkingLotSpring.Modal.Vehicles.Vehicle;
+import com.raghu.ParkingLotSpring.Modal.facility.ParkingSlot;
 import com.raghu.ParkingLotSpring.service.ParkingService;
 
 public class ParkingManager {
@@ -23,10 +24,10 @@ public class ParkingManager {
 		
 		//provide slot
 		ParkingSlot parkingSlot = new ParkingSlot();
-		parkingSlot.slot=slot;
-		parkingSlot.parkingId=1;
-		parkingSlot.inTime=new Date();
-		parkingSlot.v=vehicle;
+		parkingSlot.setSlot(slot);
+		parkingSlot.setParkingId(1);
+		parkingSlot.setInTime(new Date());
+		parkingSlot.setVehicle(vehicle);
 		
 		
 		return parkingSlot;
