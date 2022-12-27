@@ -1,6 +1,6 @@
 package com.raghu.ParkingLotSpring.Modal.ParkingArea;
 
-public class ParkingBox {
+public class ParkingBox implements Comparable<ParkingBox>{
 	String id;
 	int floorNumber;
 	boolean status;
@@ -25,4 +25,8 @@ public class ParkingBox {
 		return floorNumber;
 	}
 
+	@Override
+	public int compareTo(ParkingBox o) {
+		return this.getId().compareTo(o.getId());
+	}
 }

@@ -16,6 +16,7 @@ import static com.raghu.ParkingLotSpring.SavedData.*;
 @Component
 public class Initializer implements ApplicationListener<ContextRefreshedEvent> {
 	
+	
 	public static void init() {
 
 		// add floors/slots to parking
@@ -32,14 +33,7 @@ public class Initializer implements ApplicationListener<ContextRefreshedEvent> {
 
 		// parking ready
 		
-		EMPTY_BOXES= new PriorityQueue<>(new Comparator<ParkingBox>() {
-
-			@Override
-			public int compare(ParkingBox o1, ParkingBox o2) {
-				// TODO Auto-generated method stub
-				return o1.getId().compareTo(o2.getId());
-			} 
-		});
+		EMPTY_BOXES= new PriorityQueue<>();
 		
 		EMPTY_BOXES.addAll(GenericParking.getParkingBoxList());
 		
