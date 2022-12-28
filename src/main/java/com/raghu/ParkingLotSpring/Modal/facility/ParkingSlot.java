@@ -12,6 +12,7 @@ public class ParkingSlot {
 	Date inTime;
 	Date outTime;
 	
+	private double fare;
 	
 	public int getParkingId() {
 		return parkingId;
@@ -47,6 +48,12 @@ public class ParkingSlot {
 	public String toString() {
 		return "ParkingSlot [parkingId=" + parkingId + ", slot=" + slot.getId() + ", vehicle=" + vehicle + ", inTime=" + inTime
 				+ ", outTime=" + outTime + "]";
+	}
+	public double getFare() {
+		return fare;
+	}
+	public void setFare(double fare) {
+		this.fare = fare;
 	}
 	
 	
