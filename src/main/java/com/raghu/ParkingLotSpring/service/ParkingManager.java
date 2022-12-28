@@ -41,17 +41,27 @@ public class ParkingManager {
 	public void unParkByParkingID(int parkingId) {
 		ParkingSlot parkingSlot=PARKING_TICKETS.get(parkingId);
 		parkingSlot.setOutTime(new Date());
-		unPark(parkingSlot.getSlot().getId());		
+		calculateParkingFee(parkingSlot);
+		
+		ParkingBox box= parkingSlot.getSlot();
+		box.setStatus(false);
+		EMPTY_BOXES.add(box);
+	
 	}
 	
-	public void unPark(String slotId) {
+	private void unPark(String slotId) {
 
 		ParkingBox slot = GenericParking.getParkingBoxList().stream().filter(s -> s.getId().equals(slotId))
 				.findFirst().orElse(null);
-
 		slot.setStatus(false);
 		EMPTY_BOXES.add(slot);
 
+	}
+	
+	public void calculateParkingFee(ParkingSlot slot) {
+		double amount=parkingService.fareCalulator(slot);
+		slot.setFare(amount);
+		System.out.println("Paise bange "+ amount);
 	}
 	
 }

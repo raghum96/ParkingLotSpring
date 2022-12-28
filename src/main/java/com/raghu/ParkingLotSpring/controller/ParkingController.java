@@ -59,5 +59,11 @@ public class ParkingController {
 		return ResponseEntity.ok("take your khatara out !! Free hai mazze kar!");
 	} 
 	
+	@GetMapping(value = "/getFees")
+	public ResponseEntity<Double> getFareController(int id){
+		return ResponseEntity.ok(parkingService.getFare(id));
+		
+	}
+	
 		
 }
