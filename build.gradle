@@ -15,7 +15,7 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-rest'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'	
 	
 	//swagger parent for both swagger2 & swaggerui
 	implementation 'io.springfox:springfox-boot-starter:3.0.0'
@@ -25,4 +25,9 @@ dependencies {
 
 tasks.named('test') {
 	useJUnitPlatform()
+}
+apply plugin: 'org.springframework.boot'
+
+bootJar {
+    mainClass = 'com.raghu.ParkingLotSpring.ParkingLotSpringApplication'
 }
